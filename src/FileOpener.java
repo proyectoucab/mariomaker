@@ -70,7 +70,7 @@ public class FileOpener{
 			file.createNewFile();
 			return file;
 		}catch(Exception ex){
-			System.err.println("COULDN'T READ THE SHIT");
+			System.err.println("Error al cargar juego");
 			return null;
 		}
 	}
