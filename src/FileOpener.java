@@ -14,8 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
 /**
- * Se utiliza para abrir, solicitar abrir, guardar, solicitar guardar y leer archivos..
- * @autor Reed Weichler
+ * Se utiliza para abrir, solicitar abrir, guardar, solicitar guardar y leer archivos.
  *
  */
 public class FileOpener{
@@ -26,21 +25,21 @@ public class FileOpener{
 	private BufferedReader reader;
 	
 	/**
-	 * Crea un nuevo FileOpener con el componente principal especificando el
-          componente que se utilizará al mostrar el JFileChooser
+	 * Crea un nuevo FileOpener con el componente principal especificado
+            componente que se utilizará al mostrar el JFileChooser
 	 */
 	public FileOpener(Component component){
 		chooser = new JFileChooser();
 		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		chooser.setFileFilter(new CustomFilter("JGameMaker", "JGameMaker Nivel"));
+		chooser.setFileFilter(new CustomFilter("jgamemaker", "JGameMaker Nivel"));
 		this.component = component;
-		ext = "JGameMaker";
+		ext = "jgamemaker";
 		
 	}
 	
 	/**
 	 * Pide al usuario que guarde un archivo abriendo un JFileChooser
-*           retorna el archivo que se elige, nulo si no se elige ninguno
+* @return el archivo que se elige, nulo si no se elige ninguno
 	 */
 	public File saveFile(){
 		if(chooser == null || component == null)return null;
@@ -59,7 +58,7 @@ public class FileOpener{
 	
 	/**
 	 * Pide al usuario que abra un archivo abriendo un JFileChooser
-*           retorna el archivo que se elige, nulo si no se elige ninguno
+* @return el archivo que se elige, nulo si no se elige ninguno
 	 */
 	public File openFile(){
 		if(chooser == null || component == null)return null;
@@ -71,22 +70,22 @@ public class FileOpener{
 			file.createNewFile();
 			return file;
 		}catch(Exception ex){
-			System.err.println("Error al cargar");
+			System.err.println("COULDN'T READ THE SHIT");
 			return null;
 		}
 	}
 	/**
-	 * Abre un nuevo FileReader para leer el archivo especificado por la ruta
-*          al archivo
-*           retorna verdadero si se puede leer, falso si no
+	 *Abre un nuevo FileReader para leer el archivo especificado por la ruta
+* @param ruta ruta al archivo
+* @return verdadero si se puede leer, falso si no
 	 */
 	public boolean readFile(String path){
 		return readFile(new File(path));
 	}
 	/**
-	 * Abre un nuevo FileReader para leer el archivo especificado por la ruta
-*          al archivo
-*           retorna verdadero si se puede leer, falso si no
+	 * Abre un nuevo FileReader para leer el archivo especificado
+* @param archivo Archivo para leer
+* @return verdadero si se puede leer, falso si no
 	 */
 	public boolean readFile(File file){
 		try{
@@ -101,7 +100,7 @@ public class FileOpener{
 	
 	/**
 	 * obtiene la siguiente línea del FileReader después de llamar a readFile
-*           retorna la siguiente línea si se puede leer, nulo si no
+* retorna la siguiente línea si se puede leer, nulo si no
 	 */
 	public String readLine(){
 		if(reader == null)return null;
