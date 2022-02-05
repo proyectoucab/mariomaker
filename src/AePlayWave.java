@@ -8,7 +8,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 
 /**
- * Esta clase se usa para reproducir sonidos en el juego. Esto crea un nuevo subproceso para reproducir el sonido.
+ * Esta clase se usa para reproducir sonidos en el juego. Esto crea un nuevo subproceso para reproducir el sonido..
  *
  */
 public class AePlayWave{

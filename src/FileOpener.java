@@ -14,7 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
 /**
- * Se utiliza para abrir, solicitar abrir, guardar, solicitar guardar y leer archivos.
+ * Se utiliza para abrir, solicitar abrir, guardar, solicitar guardar y leer archivos..
  * @autor Reed Weichler
  *
  */
