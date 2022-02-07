@@ -152,7 +152,14 @@ public class GameScreen extends Pantalla{
             heroe.saltar(pressed);
         }else if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN){
             heroe.crouch(pressed);
-        }
+        }else if(code == KeyEvent.VK_R && AePlayWave.iMusica == false){ // si la musica esta apagada, la enciende,presionando R
+                        AePlayWave.fondoMusica.start(); // iniciar musica del nivel
+                        AePlayWave.iMusica=true; // encender musica con bool
+                        
+		}else if(code == KeyEvent.VK_M && AePlayWave.iMusica == true && AePlayWave.fondoMusica != null){ // si la musica esta encendida, la apaga
+			AePlayWave.fondoMusica.finalizarMusica();// quitar musica si se presiona M 
+                        AePlayWave.iMusica = false; // apago musica bool
+		}
     }
 
     //Llamado después de la inicialización y cuando el Héroe muere
