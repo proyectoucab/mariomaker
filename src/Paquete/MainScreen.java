@@ -26,7 +26,7 @@ public class MainScreen extends Pantalla {
         null
     };
 
-    private TextoBoton editorButton,nuevoJuego,cargarJuego,botonUnico,titulo,errorCargar,salir,acercaDe;
+    private TextoBoton editorButton,nuevoJuego,cargarJuego,botonUnico,titulo,errorCargar,salir;
 
     private static final int ESPACIO_ARRIBA = 150, ESPACIO_ENTRE_TITULOS = 2;
 
@@ -47,8 +47,11 @@ public class MainScreen extends Pantalla {
     marioSeleccionado = (int)(Math.random()*6);
     boolean underground = Math.random() > 0.5;
     lobby = new Lobby(underground, -1);
-    
-   
+    lobby.add(new TGoomba(500,0,32,32));
+    TKoopa koopa = new TKoopa(3000,0);
+    lobby.add(koopa);
+    koopa.crearCaparazon(true);
+    koopa.vel.x = -TKoopa.VELOCIDAD_CAPARAZON;
     lobby.add(new TBloque(32*5,32*4, TBloque.BLOQUE_PREGUNTA));
     lobby.add(new TBloque(32*4,32*2, TBloque.LADRILLOS));
     lobby.add(new TBloque(32*3,32*2, TBloque.LADRILLOS));
@@ -70,8 +73,6 @@ public class MainScreen extends Pantalla {
     botonUnico = new TextoBoton("UN SOLO JUGADOR", JGameMaker.FONT_GRANDE);
     errorCargar = new TextoBoton("ERROR AL CARGAR JUEGO", JGameMaker.FONT_GRANDE, TextoBoton.TITULO);
     titulo = new TextoBoton("JGameMaker", FONT_TITULO, Color.WHITE);
-    
-    acercaDe = new TextoBoton("ACERCA DE", JGameMaker.FONT_GRANDE);
     salir = new TextoBoton("SALIR", JGameMaker.FONT_GRANDE);
     int height = editorButton.getHeight();
 
@@ -81,8 +82,7 @@ public class MainScreen extends Pantalla {
     cargarJuego.setPos(nuevoJuego.getWidth() + ESPACIO_ENTRE_TITULOS*20, ESPACIO_ARRIBA);
     botonUnico.setPos(0, ESPACIO_ARRIBA + height + ESPACIO_ENTRE_TITULOS);
     errorCargar.setPos(0,ESPACIO_ARRIBA + (height + ESPACIO_ENTRE_TITULOS) * 2);
-    acercaDe.setPos(0, ESPACIO_ARRIBA + (height + ESPACIO_ENTRE_TITULOS)*3);
-    salir.setPos(0, ESPACIO_ARRIBA + (height + ESPACIO_ENTRE_TITULOS)*5);
+    salir.setPos(0, ESPACIO_ARRIBA + (height + ESPACIO_ENTRE_TITULOS)*4);
     }
 
     public void cargaFallida(){ //Carga de fallo
@@ -102,9 +102,8 @@ public class MainScreen extends Pantalla {
         if(cargaFallida){
             errorCargar.draw(g);
         }
-        botonUnico.draw(g); // dibujar botones por pantalla
-        acercaDe.draw(g); // dibujar botones por pantalla
-        salir.draw(g); // dibujar botones por pantalla
+        botonUnico.draw(g);
+        salir.draw(g);
 
         ((Graphics2D)g).setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.25f));
         for(int i = 0; i < 6; i++){
