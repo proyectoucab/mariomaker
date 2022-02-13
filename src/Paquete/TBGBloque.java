@@ -2,7 +2,7 @@
 import java.awt.Rectangle;
 
 /**
- * Representa un TBloque que se puede recorrer
+ * Representa un  TBloque que se puede recorrer
  *
  */
 public class TBGBloque extends TBloque {

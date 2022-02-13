@@ -7,7 +7,7 @@ import java.awt.image.*;
 import java.awt.geom.*;
 
 /**
- * Representa un Koopa en juego. Se puede saltar sobre él para convertirlo en un caparazón. Se puede hacer que el caparazón se mueva rápidamente a la izquierda o a la derecha si una Heroe salta sobre él de nuevo.
+ * Representa un  Koopa en juego. Se puede saltar sobre él para convertirlo en un caparazón. Se puede hacer que el caparazón se mueva rápidamente a la izquierda o a la derecha si una Heroe salta sobre él de nuevo.
  *
  */
 public class TKoopa extends TEnemigo{

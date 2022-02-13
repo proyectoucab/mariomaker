@@ -70,11 +70,7 @@ public class TBloque extends TGridded{
 	}
 	/**
 	 * Crea un TBloque con las coordenadas x e y especificadas, la imagen, el elemento contenido y si se mueve o no al ser golpeado.
-	 * @param x
-	 * @param y
-	 * @param image
-	 * @param item
-	 * @param movCuandoGolpea
+	 
 	 */
 	public TBloque(double x, double y, byte image, TItem item, boolean movCuandoGolpea){
 		super(x,y,WIDTH,WIDTH);
@@ -84,13 +80,12 @@ public class TBloque extends TGridded{
 		hit = DESDE_NINGUNO;
 		this.image = image;
 		this.item = item;
-	}
-	
+        }
+        
 	public void makeSpriteUnderground(){
 		for(Sprite s: BLOQUE){
 			s.replaceColors(aboveGround,underGround);
 		}
-		//System.out.println(BLOQUE[image]);
 	}
 	
 	public void init(){

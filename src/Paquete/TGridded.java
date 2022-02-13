@@ -38,8 +38,7 @@ public class TGridded extends Thing{
 	
 	/**
 	 * establece la representación cuadriculada de la posición actual en (x,y)
-	 * @param x
-	 * @param y
+	 
 	 */
 	public void setGridPos(int x, int y){
 		gridPos.setLocation(x,y);

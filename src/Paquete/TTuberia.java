@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
- * Una cosa larga y verde con un agujero en la parte superior. El agujero puede tener una TPirana y también puede ser utilizado como un teletransporte para el jugador.
+ * Una cosa  larga y verde con un agujero en la parte superior. El agujero puede tener una TPirana y también puede ser utilizado como un teletransporte para el jugador.
  *
  */
 public class TTuberia extends TGridded{

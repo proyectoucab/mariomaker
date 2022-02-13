@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
 /**
- * El pequeño amigo chomper que se encuentra en las tuberías. No se encuentran en ningún otro sitio. Si no tiene una tubería madre entonces se mata
+ * El pequeño  amigo que se encuentra en las tuberías. No se encuentran en ningún otro sitio. Si no tiene una tubería madre entonces se mata
  *
  */
 public class TPirana extends TEnemigo{

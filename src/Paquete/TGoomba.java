@@ -9,7 +9,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.*;
 
 /**
- * Es un Goomba. Mata a un jugador si lo toca desde un lado o desde abajo. Si el héroe lo golpea desde arriba, lo mata.
+ * Es un Goomba  Mata a un jugador si lo toca desde un lado o desde abajo. Si el héroe lo golpea desde arriba, lo mata.
  *
  */
 public class TGoomba extends TEnemigo{

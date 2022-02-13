@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
 /**
- * Representa un agujero en el suelo por el que las cosas del juego pueden caer y morir.
+ * Representa un agujero en el suelo por el que las cosas del juego pueden caer y morir. 
  *
  */
 public class AgujeroTierra extends TBloquesColores {

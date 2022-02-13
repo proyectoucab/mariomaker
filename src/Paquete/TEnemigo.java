@@ -1,13 +1,13 @@
 import java.awt.geom.Point2D;
 
 /**
- * Enemigo en el juego. Tiene la capacidad de matar a un jugador.
+ * Enemigo en el juego. Tiene la capacidad de matar a un jugador  .
  *
  */
 public abstract class TEnemigo extends Thing {
 	
 	/**
-	 * crea un nuevo TEnemigo con las coordenadas (x,y) y la anchura y altura especificadas.
+	 * crea un nuevo  TEnemigo con las coordenadas (x,y) y la anchura y altura especificadas.
 	 */
 	public TEnemigo(double x, double y, int width, int height){
 		super(x,y,width,height);
