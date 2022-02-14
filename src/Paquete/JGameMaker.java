@@ -11,6 +11,38 @@ import java.awt.*;
 public class JGameMaker extends JPanel{
 	
 	
+	/*public static JPanel panel;
+
+	static String ip = "localhost";
+	static int port = 22222;
+	private Scanner scanner = new Scanner(System.in);
+
+	static  Socket socket;
+	static DataOutputStream dos;
+	static DataInputStream dis;
+	
+        public static Paquete00Login login = new Paquete00Login(JOptionPane.showInputDialog("Introduce nombre de usuario"));
+        
+        //public static Paquete00Login login = new Paquete00Login("saadadafafafa");
+	private Thread thread;
+
+        public static Cliente cliente;
+        private Servidor sservidor;
+        
+	static boolean servidor = false;
+
+	static ServerSocket serverSocket;	
+	
+	
+	
+	
+	
+	*/	
+	
+	
+	
+	
+	
 	public static JPanel panel;
 	
 	private static final long serialVersionUID = 8930735783398997076L;
@@ -27,6 +59,51 @@ public class JGameMaker extends JPanel{
 	public static final double GRAVEDAD = 0.701;
 	
 	private ScreenManager manager;
+	
+	
+	/*static boolean connect() {
+		try {
+			socket = new Socket(ip, port);
+			dos = new DataOutputStream(socket.getOutputStream());
+			//dis = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
+			dis = new DataInputStream(socket.getInputStream());
+			accepted = true;
+		} catch (IOException e) {
+			System.out.println("Incapaz de conectar a : " + ip + ":" + port + " | Iniciando servidor");
+			return false;
+		}
+		System.out.println("Se conecto exitosamente al servidor.");
+		return true;
+	}*/	
+	
+	
+	/*private void initializeServer() {
+		try {
+			serverSocket = new ServerSocket(port, 8, InetAddress.getByName(ip));
+			this.servidor = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//yourTurn = true;
+		//circle = false;
+	} */
+
+
+	/*public static void listenForServerRequest() {
+		Socket socket = null;
+		try {
+			socket = serverSocket.accept();
+			dos = new DataOutputStream(socket.getOutputStream());
+			//dis = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
+			dis = new DataInputStream(socket.getInputStream());
+			accepted = true;
+			System.out.println("CLIENT HAS REQUESTED TO JOIN, AND WE HAVE ACCEPTED");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	} */	
+	
+	
 	
 	/**
 	 * devuelve la cantidad de tiempo que ha pasado desde la última actualización de pantalla
@@ -82,6 +159,24 @@ public class JGameMaker extends JPanel{
 	 * crea todo el juego, con los diferentes módulos, librerias.
 	 */
 	public JGameMaker(){
+        /*    new Thread(this).start();
+            if (JOptionPane.showConfirmDialog(this, "¿Quieres ejecutar el servidor?") == 0) {
+                sservidor = new Servidor(this);
+                sservidor.start();
+
+            }
+            cliente = new Cliente(this, "localhost");
+
+                
+                //System.out.println("WAKAWAKA");
+            cliente.start();
+            cliente.enviarDatos("ping".getBytes());
+
+		*/		
+		
+		
+		
+		
 		setBackground(Color.BLACK);
 		manager = new ScreenManager(new FileOpener(this));
 		this.setFocusable(true);
