@@ -71,7 +71,7 @@ public class PauseScreen extends Pantalla {
 	}
 
 	@Override
-	public void mouse(MouseEvent e, boolean down) {  //Comportamineto del muose
+	public void mouse(MouseEvent e, boolean down) {  //Comportamineto del muose  
 		if(down)return;
 		Point mouse = e.getPoint();
 		if(menuPrincipalSeleccionado){

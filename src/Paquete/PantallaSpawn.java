@@ -73,7 +73,7 @@ public class PantallaSpawn extends Pantalla {
 	}
 
 	public void draw(Graphics g) {
-           // mensaje1.draw(g);
+           // mensaje1.draw(g); 
             // mensaje2.draw(g);
             if(MainScreen.vAcercaDe == true){
                 g.drawImage(ACERCA_DE, (JGameMaker.screenWidth - ACERCA_DE.getWidth(null))/2, (JGameMaker.screenHeight - ACERCA_DE.getHeight(null))/2, null);

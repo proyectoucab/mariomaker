@@ -175,7 +175,7 @@ public class MainScreen extends Pantalla {
         }
         if(controles.contains(x,y)){ // ir al menu de ayuda
                 controller.nivelEditor(marioSeleccionado);
-                misControles=true; // desactivar instrucciones
+                misControles=true; // desactivar instrucciones 
         }
 
         for(int i = 0; i < 6; i++){
