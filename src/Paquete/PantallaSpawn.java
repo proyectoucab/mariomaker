@@ -21,11 +21,15 @@ public class PantallaSpawn extends Pantalla {
 	private Heroe heroe;
 	private int cosaFlotante;
 	private boolean nivelPartida, congelarPartida;
+        TextoBoton mensaje1,mensaje2;
+        private static final Image ACERCA_DE = new Sprite("Imagenes/acercaDe.png").getImage();
+        private static final Image MIS_CONTROLES = new Sprite("Imagenes/Controles.png").getImage();
 	
-	private TextoBoton cambiarNivel, congelarTiempo;
+	private TextoBoton cambiarNivel, congelarTiempo, controles;
 	
 	private static final Color  YELLOW = new Color(255,255,0,120),GREEN = new Color(0,255,0,120),RED = new Color(255,0,0,120);
 	
+               
 	private Thing[] things = {
 		new TGoomba(0, 0),
 		new TKoopa(0,0),
@@ -58,15 +62,31 @@ public class PantallaSpawn extends Pantalla {
 		nivelPartida = false;
 		cosaElegida = 0;
 		cosaFlotante = -1;
-		cambiarNivel = new TextoBoton("CAMBIAR FONDO", JGameMaker.FONT_MEDIO, 160, 160 + 48*(things.length - 1 + 10)/10);
-		congelarTiempo = new TextoBoton("CONGELAR TIEMPO", JGameMaker.FONT_MEDIO, 160, 160 + 48*(things.length - 1 + 10)/10 + 20 + cambiarNivel.getHeight());
+		cambiarNivel = new TextoBoton("CAMBIAR FONDO", JGameMaker.FONT_MEDIO, 160, 160 + 48*(things.length - 1 + 10)/10);		
+                congelarTiempo = new TextoBoton("CONGELAR TIEMPO", JGameMaker.FONT_MEDIO, 160, 160 + 48*(things.length - 1 + 10)/10 + 20 + cambiarNivel.getHeight());
+               		
 		this.heroe = heroe;
+            
+                controles = new TextoBoton("Utiliza el Mouse para colocar objetos", JGameMaker.FONT_GRANDE, TextoBoton.TITULO,TextoBoton.TITULO);    
+               
+              
 	}
 
 	public void draw(Graphics g) {
+           // mensaje1.draw(g);
+            // mensaje2.draw(g);
+            if(MainScreen.vAcercaDe == true){
+                g.drawImage(ACERCA_DE, (JGameMaker.screenWidth - ACERCA_DE.getWidth(null))/2, (JGameMaker.screenHeight - ACERCA_DE.getHeight(null))/2, null);
+            }else if(MainScreen.misControles == true){
+                g.drawImage(MIS_CONTROLES, (JGameMaker.screenWidth - MIS_CONTROLES.getWidth(null))/2, (JGameMaker.screenHeight - MIS_CONTROLES.getHeight(null))/2, null);
+            }
+
+           
 		if(visible){
 			((Graphics2D)g).setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.25f));
+                        
 			for(int i = 0; i < things.length; i++){
+                            
 				if(things[i] == null)continue;
 				BufferedImage img = things[i].preview();
 				int x = 160+(i%10)*48;
@@ -97,7 +117,13 @@ public class PantallaSpawn extends Pantalla {
 		if(visible){
 			cambiarNivel.draw(g);
 			congelarTiempo.draw(g);
+                        controles.draw(g);
+                        
+                        
+                        
+                        
 		}
+                
 	}
 	/**
 	 * Devuelve verdadero si esto se puede ver en pantalla
@@ -110,11 +136,7 @@ public class PantallaSpawn extends Pantalla {
 		int code = e.getKeyCode();
 		switch(code){
 			//hacer que el menú sea visible en estos botones
-			case KeyEvent.VK_Q:
 			case KeyEvent.VK_SHIFT:
-			case KeyEvent.VK_TAB:
-			case KeyEvent.VK_ALT:
-			case KeyEvent.VK_CONTROL:
 				visible = down;
 			break;
 		}
@@ -256,6 +278,7 @@ public class PantallaSpawn extends Pantalla {
 		t.think();
 		if(!visible)return;
 		cosaFlotante = getIndex(ScreenManager.mouse.x, ScreenManager.mouse.y);
+                
 	}
 	private int getIndex(int x, int y){
 		for(int i = 0; i < things.length; i++){

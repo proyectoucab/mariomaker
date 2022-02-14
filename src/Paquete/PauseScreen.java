@@ -78,6 +78,8 @@ public class PauseScreen extends Pantalla {
 			if(aceptar.contains(mouse)){
                                 AePlayWave.fondoMusica.finalizarMusica();// quitar musica del juego, si se sale al menu principal
 				controller.menuPrincipal();
+                                MainScreen.vAcercaDe=false; // reiniciamos los valores de las imagenes 
+                                MainScreen.misControles=false; // reiniciamos los valores de las imagenes
 			}else if(cancelar.contains(mouse)){
 				menuPrincipalSeleccionado = false;
 			}
