@@ -27,7 +27,12 @@ public class ScreenManager implements MouseListener, MouseMotionListener,KeyList
 
 	private ArrayList<Integer> teclaPresionada;
 	
+
 	
+	/*public static Server server;
+	public static Client client;
+	
+	public static Connector connection;*/	
 	private boolean thinked = true;
 	
 	/**
