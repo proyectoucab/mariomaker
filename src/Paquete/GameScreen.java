@@ -18,6 +18,8 @@ public class GameScreen extends Pantalla{
     public int lobbyIndex;
     //verdadero si el otro nivel esta cargando, falso si no
     public boolean cargando;
+	
+    /*public List<JugadorMP> jugadoresConectados; */
 
     private TextoBoton etiquetaCarga;
 
