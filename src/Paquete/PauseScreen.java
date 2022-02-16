@@ -85,7 +85,9 @@ public class PauseScreen extends Pantalla {
 			}
 		}else if(quitSelected){
 			if(aceptar.contains(mouse)){
-				System.exit(0);
+			 UnJugador.sumarEstadistica(7,"Partidas Abandonadas: ,"); // le envio el numero de posicion de opcion, de lo que debe sumar y el nombre de la cantidad a sumar             
+                            System.exit(0);
+                               
 			}else if(cancelar.contains(mouse)){
 				quitSelected = false;
 			}

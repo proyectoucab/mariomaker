@@ -10,11 +10,7 @@ import java.awt.image.BufferedImage;
 public class MainScreen extends Pantalla {
     private Lobby lobby;
 
-    /*
-    * IP a la que intenta conectarse. cuando es nulo, no está tratando de conectarse a 
-    * un servidor, cuando se inicializa, esto significa que está tratando de conectarse a 
-    * un servidor.
-    */
+    
     private int marioSeleccionado;
 
     private final BufferedImage[] MARIO_COLORS = {
@@ -150,6 +146,7 @@ public class MainScreen extends Pantalla {
         if(down)return;
         int x = e.getX(), y = e.getY();
         if(salir.contains(x,y)){
+            UnJugador.sumarEstadistica(7,"Partidas Abandonadas: ,"); // le envio el numero de posicion de opcion, de lo que debe sumar y el nombre de la cantidad a sumar             
             System.exit(0);
         }
         if(!editorSeleccionado){
@@ -184,8 +181,7 @@ public class MainScreen extends Pantalla {
                 xpos -= 3;
                 ypos = 1;
             }
-            if(x > 428 + xpos*128 && x < 508 + xpos*128 &&
-                y > 100 + ypos*80 && y < 180 + ypos*80){
+            if(x > 428 + xpos*128 && x < 508 + xpos*128 && y > 100 + ypos*80 && y < 180 + ypos*80){
                 marioSeleccionado = i;
                 break;
             }
