@@ -104,32 +104,32 @@ public class UnJugador extends GameScreen{
         
         // Modificar Contenido de Archivo
         
-        static void modificarArchivo(String filePath, String oldString, String newString) {
-        File fileToBeModified = new File(filePath);
+        static void modificarArchivo(String filePath, String oldCadena, String newCadena) {
+        File archivoModificar = new File(filePath);
 
-        String oldContent = "";
+        String oldContenido = "";
 
         BufferedReader reader = null;
 
         FileWriter writer = null;
 
         try {
-            reader = new BufferedReader(new FileReader(fileToBeModified));
+            reader = new BufferedReader(new FileReader(archivoModificar));
 
-            //Reading all the lines of input text file into oldContent
+            //Leer todas las líneas del archivo de texto de entrada en oldContenido
             String line = reader.readLine();
 
             while (line != null) {
-                oldContent = oldContent + line + System.lineSeparator();
+                oldContenido = oldContenido + line + System.lineSeparator();
 
                 line = reader.readLine();
             }
 
-            //Replacing oldString with newString in the oldContent
-            String newContent = oldContent.replaceAll(oldString, newString);
+            //Reemplazo de oldString con newString en el contenido antiguo
+            String newContent = oldContenido.replaceAll(oldCadena, newCadena);
 
-            //Rewriting the input text file with newContent
-            writer = new FileWriter(fileToBeModified);
+            //Reescribiendo el archivo de texto de entrada con newContenido
+            writer = new FileWriter(archivoModificar);
 
             writer.write(newContent);
         } catch (IOException e) {
